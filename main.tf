@@ -24,7 +24,7 @@ resource "aws_instance" "tf-ec2" {
   ami           = data.aws_ami.amazon_linux.id
   instance_type = var.instance_type
   key_name      = var.key_name
-
+  vpc_security_group_ids = ["sg-0b5de144b07c39085"]
   tags = {
     Name = var.name
   }
